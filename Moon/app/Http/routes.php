@@ -26,8 +26,8 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['prefix' => 'admin','middleware' => ['web']], function () {
+    Route::get('/','Admin\AdminController@index');
 });
 
 Route::group(['middleware' => 'web'], function () {
